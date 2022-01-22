@@ -1,3 +1,3 @@
 import TabContainer from "./TabContainer";
 
-module.exports = TabContainer;
+export { TabContainer };

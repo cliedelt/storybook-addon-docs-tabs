@@ -1,6 +1,7 @@
 {
   "extends": "../tsconfig.app.json",
   "compilerOptions": {
+    "jsx": "react",
     "types": ["node"],
     "allowSyntheticDefaultImports": true
   },

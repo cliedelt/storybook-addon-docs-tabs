@@ -1,17 +1,15 @@
 import React from "react";
 import { StoryContext } from "@storybook/addons";
+import { TabsType } from "./types/tabs";
+import "./tabContainer.scss";
 declare type TabContainerInput = {
     context: StoryContext;
     children: React.ReactNode;
 };
 export default class TabContainer extends React.Component<TabContainerInput> {
-    id: string;
-    url: string;
-    loadEvent: Event;
-    iframeElement: HTMLIFrameElement | null;
+    hasTabs: boolean;
+    tabs: TabsType;
     constructor(props: TabContainerInput);
-    componentDidMount(): void;
-    setIFrameHeight(): void;
     render(): JSX.Element;
 }
 export {};

@@ -1,0 +1,6 @@
+.react-tabs__tab-panel {
+  display: none;
+  &--selected {
+    display: block;
+  }
+}

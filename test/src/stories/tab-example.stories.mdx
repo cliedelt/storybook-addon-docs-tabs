@@ -1,0 +1,13 @@
+import { Story, Meta, ArgsTable, Source } from "@storybook/addon-docs";
+import * as DesignTab from "./design-tab.stories.mdx";
+import * as ImplementationTab from "./implementation-tab.stories.mdx";
+
+<Meta
+  title="Example/Tab Example"
+  parameters={{
+    tabs: [
+      { label: "Design", mdx: DesignTab },
+      { label: "Implementation", mdx: ImplementationTab },
+    ],
+  }}
+/>

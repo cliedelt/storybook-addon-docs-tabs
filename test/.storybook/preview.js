@@ -1,5 +1,5 @@
 import { DocsContainer } from "@storybook/addon-docs/blocks";
-import TabContainer from "../src/TabContainer";
+import { TabContainer } from "storybook-addon-docs-tabs";
 
 export const parameters = {
   docs: {
