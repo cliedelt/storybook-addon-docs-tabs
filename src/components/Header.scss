@@ -1,0 +1,27 @@
+.storybook_header_container {
+  background-color: red;
+  background-color: $color--neutral__grey-light;
+  border-bottom: 1px $color__blue-dark-15 solid;
+  .storybook_header {
+    max-width: 1000px;
+    margin: auto;
+    padding: $spaces-l 20px;
+    .report_link {
+      text-decoration: none;
+      &:visited {
+        color: $color-text--text-link;
+        &:hover {
+          color: $color-text--clickable;
+        }
+      }
+      label.cta {
+        cursor: pointer;
+        display: flex;
+        .icon {
+          margin-top: -2px;
+          margin-right: $spaces-xs;
+        }
+      }
+    }
+  }
+}
