@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "./components/Header";
-import Footer from "./components/footer";
-import { StoryContext, addons } from "@storybook/addons";
+import Footer from "./components/Footer";
+import { StoryContext } from "@storybook/addons";
 
 type TabContainerInput = {
   context: StoryContext;
@@ -9,12 +9,12 @@ type TabContainerInput = {
 };
 
 export default class TabContainer extends React.Component<TabContainerInput> {
-  id: string;
-  url: string;
+  id!: string;
+  url!: string;
   loadEvent = new Event("tabLoaded");
-  iframeElement: HTMLIFrameElement;
+  iframeElement!: HTMLIFrameElement | null;
 
-  constructor(props) {
+  constructor(props: TabContainerInput) {
     super(props);
     let tabProperties = this.props.context?.parameters?.tabs;
 
@@ -28,17 +28,22 @@ export default class TabContainer extends React.Component<TabContainerInput> {
   }
 
   componentDidMount(): void {
-    if (this.id) {
+    if (this.id && this.iframeElement) {
       this.iframeElement.onload = () => {
-        this.iframeElement.height =
-          this.iframeElement.contentDocument.getElementById("docs-root")
-            .offsetHeight + "px";
+        this.setIFrameHeight();
       };
       this.iframeElement.onresize = () => {
-        this.iframeElement.height =
-          this.iframeElement.contentDocument.getElementById("docs-root")
-            .offsetHeight + "px";
+        this.setIFrameHeight();
       };
+    }
+  }
+
+  setIFrameHeight() {
+    if (this.iframeElement) {
+      let docsRootElement =
+        this.iframeElement.contentDocument?.getElementById("docs-root");
+      if (docsRootElement)
+        this.iframeElement.height = docsRootElement.offsetHeight + "px";
     }
   }
 
@@ -54,7 +59,7 @@ export default class TabContainer extends React.Component<TabContainerInput> {
                   margin: "auto",
                   padding: "4rem 20px",
                 }
-              : null
+              : undefined
           }
         >
           {this.props.children}

@@ -1,0 +1,36 @@
+{
+  "name": "storybook-addon-docs-tabs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-node-resolve": "^13.1.3",
+    "@rollup/plugin-typescript": "^8.3.0",
+    "@storybook/addons": "^6.4.14",
+    "@types/react": "^17.0.38",
+    "react": "^17.0.2",
+    "rollup": "^2.66.0",
+    "rollup-plugin-dts": "^4.1.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-styles": "^4.0.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "sass": "^1.49.0",
+    "typescript": "^4.5.5"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rollup -c"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cliedelt/storybook-addon-docs-tabs.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cliedelt/storybook-addon-docs-tabs/issues"
+  },
+  "homepage": "https://github.com/cliedelt/storybook-addon-docs-tabs#readme"
+}

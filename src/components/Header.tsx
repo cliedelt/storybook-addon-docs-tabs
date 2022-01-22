@@ -1,7 +1,7 @@
 import React from "react";
-import "!style-loader!css-loader!sass-loader!./header.scss";
+import "./header.scss";
 
-export default function Header(props) {
+export default function Header(props: { title: string }) {
   return (
     <div className="storybook_header_container">
       <div className="d-flex justify-content-between align-items-center storybook_header">
