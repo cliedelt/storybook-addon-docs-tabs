@@ -1,1 +1,0 @@
-# storybook-addon-docs-tabs
