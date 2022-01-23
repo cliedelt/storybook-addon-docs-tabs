@@ -1,6 +1,5 @@
 import React from "react";
 import Header from "./components/Header";
-import Footer from "./components/Footer";
 import { StoryContext } from "@storybook/addons";
 import { TabsType } from "./types/tabs";
 import { tabConfigType } from "./types/tabConfig";
@@ -12,6 +11,8 @@ import "./tabContainer.scss";
 type TabContainerInput = {
   context: StoryContext;
   children: React.ReactNode;
+  additionalHeaderElement?: Node;
+  footerElement?: Node;
 };
 
 export default class TabContainer extends React.Component<TabContainerInput> {
@@ -26,7 +27,9 @@ export default class TabContainer extends React.Component<TabContainerInput> {
       tabProperties.forEach((tab: tabConfigType) => {
         const docId = tab.mdx?.default?.id,
           storyId = kebabCase(tab.mdx?.default?.includeStories[0]),
-          url = `iframe.html?id=${docId + "--" + storyId}&viewMode=docs`;
+          url = `iframe.html?id=${
+            docId + "--" + storyId
+          }&viewMode=docs&tabIframe`;
         this.tabs.push({
           label: tab.label,
           url: url,
@@ -35,43 +38,56 @@ export default class TabContainer extends React.Component<TabContainerInput> {
     }
   }
 
+  isNotTabIframe() {
+    const params = new URLSearchParams(window.location.search);
+    return !params.has("tabIframe");
+  }
+
   render() {
+    return this.isNotTabIframe()
+      ? this.renderDocPage()
+      : this.renderTabContent();
+  }
+  renderDocPage() {
     return (
       <div>
-        {this.tabs.length ? <Header title={this.props.context.title} /> : null}
-        <div
-          style={
-            this.tabs.length
-              ? {
-                  maxWidth: "1000px",
-                  margin: "auto",
-                  padding: "4rem 20px",
-                }
-              : undefined
-          }
-        >
-          {this.props.children}
-
-          {this.tabs.length > 0 ? (
-            <Tabs forceRenderTabPanel={true}>
-              <TabList>
-                {this.tabs.map((tab, i) => {
-                  return <Tab key={i.toString()}>{tab.label}</Tab>;
-                })}
-              </TabList>
-
-              {this.tabs.map((tab, i) => {
-                return (
-                  <TabPanel key={i.toString()}>
-                    <TabFrame url={tab.url} />
-                  </TabPanel>
-                );
-              })}
-            </Tabs>
-          ) : null}
-        </div>
-        {this.tabs.length ? <Footer /> : null}
+        <Header
+          title={this.props.context.title}
+          additionalElement={this.props.additionalHeaderElement}
+        />
+        {this.tabs.length > 0 ? this.renderTabs() : this.props.children}
+        {this.props.footerElement ? this.props.footerElement : null}
       </div>
     );
+  }
+  renderTabs() {
+    return (
+      <div
+        style={{
+          maxWidth: "1000px",
+          margin: "auto",
+          padding: "4rem 20px",
+        }}
+      >
+        <Tabs forceRenderTabPanel={true}>
+          <TabList>
+            {this.tabs.map((tab, i) => {
+              return <Tab key={i.toString()}>{tab.label}</Tab>;
+            })}
+          </TabList>
+
+          {this.tabs.map((tab, i) => {
+            return (
+              <TabPanel key={i.toString()}>
+                <TabFrame url={tab.url} />
+              </TabPanel>
+            );
+          })}
+        </Tabs>
+      </div>
+    );
+  }
+  renderTabContent() {
+    return <div>{this.props.children}</div>;
   }
 }

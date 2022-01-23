@@ -10,6 +10,6 @@
     "../src/**/*.spec.ts",
     "../projects/**/*.spec.ts"
   ],
-  "include": ["../src/**/*", "../projects/**/*"],
+  "include": ["../src/**/*", "../projects/**/*", "./components/**/*"],
   "files": ["./typings.d.ts"]
 }

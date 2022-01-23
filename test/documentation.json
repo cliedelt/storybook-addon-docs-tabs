@@ -155,21 +155,21 @@
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.prod.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "object",
-                "defaultValue": "{\n  production: true\n}"
-            },
-            {
-                "name": "environment",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/environments/environment.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "object",
                 "defaultValue": "{\n  production: false\n}"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/environments/environment.prod.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\n  production: true\n}"
             },
             {
                 "name": "require",
@@ -181,7 +181,28 @@
                 "type": "literal type"
             }
         ],
-        "functions": [],
+        "functions": [
+            {
+                "name": "Footer",
+                "file": ".storybook/components/Footer.tsx",
+                "ctype": "miscellaneous",
+                "subtype": "function",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "args": []
+            },
+            {
+                "name": "Header",
+                "file": ".storybook/components/Header.tsx",
+                "ctype": "miscellaneous",
+                "subtype": "function",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "args": []
+            }
+        ],
         "typealiases": [],
         "enumerations": [],
         "groupedVariables": {
@@ -206,18 +227,6 @@
                     "type": "literal type"
                 }
             ],
-            "src/environments/environment.prod.ts": [
-                {
-                    "name": "environment",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/environments/environment.prod.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "object",
-                    "defaultValue": "{\n  production: true\n}"
-                }
-            ],
             "src/environments/environment.ts": [
                 {
                     "name": "environment",
@@ -229,9 +238,46 @@
                     "type": "object",
                     "defaultValue": "{\n  production: false\n}"
                 }
+            ],
+            "src/environments/environment.prod.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.prod.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\n  production: true\n}"
+                }
             ]
         },
-        "groupedFunctions": {},
+        "groupedFunctions": {
+            ".storybook/components/Footer.tsx": [
+                {
+                    "name": "Footer",
+                    "file": ".storybook/components/Footer.tsx",
+                    "ctype": "miscellaneous",
+                    "subtype": "function",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "args": []
+                }
+            ],
+            ".storybook/components/Header.tsx": [
+                {
+                    "name": "Header",
+                    "file": ".storybook/components/Header.tsx",
+                    "ctype": "miscellaneous",
+                    "subtype": "function",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "args": []
+                }
+            ]
+        },
         "groupedEnumerations": {},
         "groupedTypeAliases": {}
     },
@@ -240,6 +286,26 @@
         "count": 0,
         "status": "low",
         "files": [
+            {
+                "filePath": ".storybook/components/Footer.tsx",
+                "type": "function",
+                "linktype": "miscellaneous",
+                "linksubtype": "function",
+                "name": "Footer",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": ".storybook/components/Header.tsx",
+                "type": "function",
+                "linktype": "miscellaneous",
+                "linksubtype": "function",
+                "name": "Header",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
             {
                 "filePath": "src/app/app.component.ts",
                 "type": "component",
