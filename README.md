@@ -61,24 +61,3 @@ export const parameters = {
   "presets": [["@babel/react", { "runtime": "automatic" }]]
 }
 ```
-
----
-
-Your `.storybook/preview-head.html`
-
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <style>
-      .sbdocs.sbdocs-wrapper {
-        padding: 0px;
-      }
-      .sbdocs.sbdocs-content {
-        max-width: none;
-      }
-    </style>
-  </head>
-  <body></body>
-</html>
-```
