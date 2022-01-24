@@ -1,30 +1,29 @@
 .storybook_header_container {
-  background-color: red;
-  background-color: #f6f6f6;
-  border-bottom: 1px #dde1f1 solid;
+  background-color: #fafafa;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    right: 50%;
+    background-color: #fafafa;
+    height: 100%;
+    margin: 0px -50vw;
+    z-index: 0;
+  }
   .storybook_header {
-    max-width: 1000px;
-    margin: auto;
-    padding: 24px 20px;
+    position: relative;
+    margin-top: -4rem;
+    padding: 48px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    .report_link {
-      text-decoration: none;
-      &:visited {
-        color: #4dbfe7;
-        &:hover {
-          color: #8e9bcf;
-        }
-      }
-      label.cta {
-        cursor: pointer;
-        display: flex;
-        .icon {
-          margin-top: -2px;
-          margin-right: 4px;
-        }
-      }
+    font-family: "Nunito Sans", -apple-system, ".SFNSText-Regular",
+      "San Francisco", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue",
+      Helvetica, Arial, sans-serif;
+    h1 {
+      margin: 0;
     }
   }
 }

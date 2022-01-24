@@ -1,15 +1,17 @@
-Your `.storybook/manager-head.html`
+## storybook-addon-docs-tabs
 
-```html
-<style>
-  [id^="hidden"],
-  [data-parent-id^="hidden"] {
-    display: none !important;
-  }
-</style>
+A [Storybook](https://github.com/storybooks/storybook) addon that adds tabs to the [Docs Addon](https://github.com/storybookjs/storybook/tree/next/addons/docs).
+
+## Getting started
+
+### 1. Install
+
+```sh
+npm install --save-dev storybook-addon-designs
+# yarn add -D storybook-addon-designs
 ```
 
-Your `.storybook/preview.js`
+### 2. Add new Container to `.storybook/preview.js`
 
 ```js
 import { DocsContainer } from "@storybook/addon-docs/blocks";
@@ -26,7 +28,20 @@ export const parameters = {
 };
 ```
 
-Your `.storybook/tsconfig.json`
+### 2. Hide Tab Stories from the sidebar in `.storybook/manager-head.html`
+
+```html
+<style>
+  [id^="hidden"],
+  [data-parent-id^="hidden"] {
+    display: none !important;
+  }
+</style>
+```
+
+### 3. Add jsx in `.storybook/tsconfig.json`
+
+**Optional: If you havent configured jsx**
 
 ```json
 {
@@ -37,13 +52,17 @@ Your `.storybook/tsconfig.json`
 }
 ```
 
-Your `.storybook/.babelrc`
+### 4. Add react preset in `.storybook/.babelrc`
+
+**Optional: If you havent configured jsx**
 
 ```json
 {
   "presets": [["@babel/react", { "runtime": "automatic" }]]
 }
 ```
+
+---
 
 Your `.storybook/preview-head.html`
 

@@ -22,7 +22,6 @@ export default class TabFrame extends React.Component<IFrameInput> {
   }
 
   componentDidMount(): void {
-    console.log("Init Iframe with url: ", this.props.url);
     if (this.iframeElement) {
       this.iframeElement.onload = () => {
         this.setIFrameHeight();

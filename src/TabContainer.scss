@@ -1,6 +1,41 @@
-.react-tabs__tab-panel {
-  display: none;
-  &--selected {
-    display: block;
+.react-tabs {
+  &__tab-list {
+    list-style: none;
+    display: flex;
+    max-width: 1000px;
+    margin: auto;
+    padding: 0px;
+    .react-tabs__tab {
+      font-size: 16px;
+      font-family: "Nunito Sans", -apple-system, ".SFNSText-Regular",
+        "San Francisco", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue",
+        Helvetica, Arial, sans-serif;
+      padding: 16px 0px 0px 0px;
+      margin-right: 42px;
+      white-space: nowrap;
+      font-weight: 500;
+      cursor: pointer;
+      user-select: none;
+      border-top: 3px solid transparent;
+      &--selected {
+        color: #45accf;
+        border-top-color: #45accf;
+      }
+      &:hover {
+        color: #1e369e;
+      }
+    }
   }
+  &__tab-panel {
+    display: none;
+    &--selected {
+      display: block;
+    }
+  }
+}
+.tab-addon-content {
+  margin: 2rem 0px;
+}
+.tab-addon-tab-content {
+  margin: -2rem -20px;
 }

@@ -16,6 +16,7 @@ export default class TabContainer extends React.Component<TabContainerInput> {
     render(): JSX.Element;
     renderDocPage(): JSX.Element;
     renderTabs(): JSX.Element;
+    renderNormalDocPage(): JSX.Element;
     renderTabContent(): JSX.Element;
 }
 export {};

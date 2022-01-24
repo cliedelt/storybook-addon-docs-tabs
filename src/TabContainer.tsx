@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "./components/Header";
-import { StoryContext } from "@storybook/addons";
+import { StoryContext, AddonStore } from "@storybook/addons";
 import { TabsType } from "./types/tabs";
 import { tabConfigType } from "./types/tabConfig";
 import TabFrame from "./components/TabFrame";
@@ -22,7 +22,7 @@ export default class TabContainer extends React.Component<TabContainerInput> {
   constructor(props: TabContainerInput) {
     super(props);
     let tabProperties = this.props.context?.parameters?.tabs;
-
+    console.log(this.props.context);
     if (tabProperties && tabProperties.length > 0) {
       tabProperties.forEach((tab: tabConfigType) => {
         const docId = tab.mdx?.default?.id,
@@ -55,27 +55,20 @@ export default class TabContainer extends React.Component<TabContainerInput> {
           title={this.props.context.title}
           additionalElement={this.props.additionalHeaderElement}
         />
-        {this.tabs.length > 0 ? this.renderTabs() : this.props.children}
+        {this.tabs.length > 0 ? this.renderTabs() : this.renderNormalDocPage()}
         {this.props.footerElement ? this.props.footerElement : null}
       </div>
     );
   }
   renderTabs() {
     return (
-      <div
-        style={{
-          maxWidth: "1000px",
-          margin: "auto",
-          padding: "4rem 20px",
-        }}
-      >
-        <Tabs forceRenderTabPanel={true}>
-          <TabList>
-            {this.tabs.map((tab, i) => {
-              return <Tab key={i.toString()}>{tab.label}</Tab>;
-            })}
-          </TabList>
-
+      <Tabs forceRenderTabPanel={false}>
+        <TabList>
+          {this.tabs.map((tab, i) => {
+            return <Tab key={i.toString()}>{tab.label}</Tab>;
+          })}
+        </TabList>
+        <div>
           {this.tabs.map((tab, i) => {
             return (
               <TabPanel key={i.toString()}>
@@ -83,11 +76,14 @@ export default class TabContainer extends React.Component<TabContainerInput> {
               </TabPanel>
             );
           })}
-        </Tabs>
-      </div>
+        </div>
+      </Tabs>
     );
   }
+  renderNormalDocPage() {
+    return <div className="tab-addon-content">{this.props.children}</div>;
+  }
   renderTabContent() {
-    return <div>{this.props.children}</div>;
+    return <div className="tab-addon-tab-content">{this.props.children}</div>;
   }
 }

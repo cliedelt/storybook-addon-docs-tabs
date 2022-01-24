@@ -8,7 +8,7 @@ export default function Header(props: {
   return (
     <div className="storybook_header_container">
       <div className="storybook_header">
-        <h2>{props.title}</h2>
+        <h1>{props.title}</h1>
         {props.additionalElement}
       </div>
     </div>
