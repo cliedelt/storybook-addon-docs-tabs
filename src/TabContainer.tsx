@@ -22,7 +22,6 @@ export default class TabContainer extends React.Component<TabContainerInput> {
   constructor(props: TabContainerInput) {
     super(props);
     let tabProperties = this.props.context?.parameters?.tabs;
-    console.log(this.props.context);
     if (tabProperties && tabProperties.length > 0) {
       tabProperties.forEach((tab: tabConfigType) => {
         const docId = tab.mdx?.default?.id,
