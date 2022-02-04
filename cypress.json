@@ -2,6 +2,5 @@
     "ignoreTestFiles": [
         "**/__snapshots__/*",
         "**/__image_snapshots__/*"
-    ],
-    "video": false
+    ]
 }

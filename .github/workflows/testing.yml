@@ -6,11 +6,6 @@ jobs:
   cypress-run:
     runs-on: ubuntu-latest
     steps:
-      - name: Setup Node
-        uses: actions/setup-node@v1
-        with:
-          node-version: 16
-      - run: node -v
       - name: Checkout
         uses: actions/checkout@v2
       - name: Install dependencies
