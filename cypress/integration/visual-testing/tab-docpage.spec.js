@@ -7,27 +7,19 @@ describe("tab docspage", () => {
 
   it("displays two tabs", () => {
     getIframeBody()
-      .find("#docs-root")
+      .find(".storybook_header")
       .should("not.be.empty")
       .then(() => {
-        cy.get("html").toMatchImageSnapshot();
+        cy.get("html").toMatchImageSnapshot({});
       });
   });
 });
 
 const getIframeBody = () => {
-  return cy.get("iframe#storybook-preview-iframe").then(($iframe) => {
-    cy.wrap($iframe)
-      .should("not.be.empty")
-      .find("iframe")
-      .its("0.contentDocument.body")
-      .should("not.be.empty")
-      .then(cy.wrap);
-  });
-  /*
-    .its("0.contentDocument.body", { log: true })
-    .find(".react-tabs__tab-panel iframe", { log: true, timeout: 10000 })
-    .its("0.contentDocument.body")
-    .should("not.be.empty")
-    .then(cy.wrap);*/
+  return cy
+    .get("iframe#storybook-preview-iframe")
+    .iframe()
+    .find("iframe")
+    .iframe()
+    .then(cy.wrap);
 };

@@ -20,6 +20,7 @@
     "@types/react-tabs": "^2.3.4",
     "concurrently": "^7.0.0",
     "cypress": "^9.4.1",
+    "cypress-iframe": "^1.0.1",
     "cypress-plugin-snapshots": "^1.4.4",
     "http-server": "^14.1.0",
     "lodash": "^4.17.21",

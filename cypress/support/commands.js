@@ -25,3 +25,19 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 import "cypress-plugin-snapshots/commands";
+
+Cypress.Commands.add("iframe", { prevSubject: "element" }, ($iframe) => {
+  return new Cypress.Promise((resolve) => {
+    let location = $iframe.get(0).contentWindow.location.href;
+    if (
+      $iframe.get(0).contentDocument.readyState === "complete" &&
+      location !== "about:blank"
+    ) {
+      resolve($iframe.contents().find("body:first"));
+    } else {
+      $iframe.on("load", () => {
+        resolve($iframe.contents().find("body:first"));
+      });
+    }
+  });
+});
