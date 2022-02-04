@@ -24,11 +24,13 @@ export default class TabContainer extends React.Component<TabContainerInput> {
     let tabProperties = this.props.context?.parameters?.tabs;
     if (tabProperties && tabProperties.length > 0) {
       tabProperties.forEach((tab: tabConfigType) => {
-        const docId = tab.mdx?.default?.id,
-          storyId = kebabCase(tab.mdx?.default?.includeStories[0]),
-          url = `iframe.html?id=${
-            docId + "--" + storyId
-          }&viewMode=docs&tabIframe`;
+        const docId = tab.mdx?.default?.id;
+        if (!docId)
+          console.error("Did you forget to set the id of the mdx page?");
+        const storyId = kebabCase(tab.mdx?.default?.includeStories[0]);
+        const url = `iframe.html?id=${
+          docId + "--" + storyId
+        }&viewMode=docs&tabIframe`;
         this.tabs.push({
           label: tab.label,
           url: url,

@@ -1,19 +1,41 @@
 {
   "name": "storybook-addon-docs-tabs",
   "version": "1.0.0",
-  "description": "",
+  "description": "A Storybook addon that adds tabs to the Docs Addon.",
+  "author": "cliedelt",
+  "keywords": [
+    "storybook-addons",
+    "style",
+    "design",
+    "appearance",
+    "organize"
+  ],
+  "storybook": {
+    "displayName": "Docs Tabs",
+    "icon": "",
+    "supportedFrameworks": [
+      "react",
+      "angular"
+    ]
+  },
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
+  "types": "dist/index.d.ts",
+  "peerDependencies": {
+    "react": "^17.0.0",
+    "@storybook/addon-docs": "^6.0.0",
+    "@storybook/addons": "^6.0.0"
+  },
   "dependencies": {
-    "react": "^17.0.2",
+    "react": "^17.0.0",
     "react-tabs": "^3.2.3"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^21.0.1",
     "@rollup/plugin-node-resolve": "^13.1.3",
     "@rollup/plugin-typescript": "^8.3.0",
+    "@storybook/addons": "^6.0.0",
     "@storybook/addon-docs": "^6.4.14",
-    "@storybook/addons": "^6.4.14",
     "@storybook/theming": "^6.4.14",
     "@types/lodash": "^4.14.178",
     "@types/react": "^17.0.38",
@@ -49,7 +71,6 @@
     "type": "git",
     "url": "git+https://github.com/cliedelt/storybook-addon-docs-tabs.git"
   },
-  "author": "",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/cliedelt/storybook-addon-docs-tabs/issues"
