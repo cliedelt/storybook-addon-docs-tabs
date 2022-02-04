@@ -4,5 +4,6 @@
         "**/__image_snapshots__/*"
     ],
     "video": false,
-    "screenshotOnRunFailure": false
+    "screenshotOnRunFailure": false,
+    "defaultCommandTimeout": 10000
 }
