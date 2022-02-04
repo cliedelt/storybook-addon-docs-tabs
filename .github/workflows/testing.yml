@@ -13,7 +13,7 @@ jobs:
       - name: Run E2E tests
         uses: cypress-io/github-action@v1
         with:
-          build: npm run buildTest
-          start: npm run serveTest
+          build: npm run ci:buildTest
+          start: npm run ci:serveTest
           wait-on: http://localhost:8080
           install: false
