@@ -1,11 +1,11 @@
-<center>
+<p align="center">
   <img src="logo.png">
 
 ## storybook-addon-docs-tabs
 
 A [Storybook](https://github.com/storybooks/storybook) addon that adds tabs to the [Docs Addon](https://github.com/storybookjs/storybook/tree/next/addons/docs).
 
-</center>
+</p>
 
 _Note: This addon is a little bit hacky. The storybook api does not support something like this at all. But you can still use this addon because it is still using mdx and its "normal" api._
 
