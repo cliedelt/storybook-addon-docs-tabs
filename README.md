@@ -8,6 +8,10 @@ A [Storybook](https://github.com/storybooks/storybook) addon that adds tabs to t
 
 _Note: This addon is a little bit hacky. The storybook api does not support something like this at all. But you can still use this addon because it is still using mdx and its "normal" api._
 
+<p align="center">
+  <img src="screenshot.png">
+</p>
+
 ## Getting started
 
 ### 1. Install
