@@ -80,7 +80,7 @@ Unfortunately this is necessary because of the limited Storybook api. Any unique
 
 Prefix the stories title with `hidden/` to hide it in the sidebar.
 
-```mdx
+```md
 import { Story, Meta, ArgsTable, Source } from "@storybook/addon-docs";
 
 <Meta
@@ -92,10 +92,10 @@ import { Story, Meta, ArgsTable, Source } from "@storybook/addon-docs";
 
 ### Import Tabs
 
-```mdx
+```md
 import { Meta } from "@storybook/addon-docs";
-import * as DesignTab from "./design-tab.stories.mdx";
-import * as ImplementationTab from "./implementation-tab.stories.mdx";
+import _ as DesignTab from "./design-tab.stories.mdx";
+import _ as ImplementationTab from "./implementation-tab.stories.mdx";
 
 <Meta
   title="Example/Tab Example"
