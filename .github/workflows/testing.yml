@@ -9,9 +9,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Install dependencies
-        uses: cypress-io/github-action@v1
-        with:
-          runTests: false
+        run: npm ci
       - name: Run server
         run: npm run ci:startAngularStorybookBuild &
       - name: Run E2E tests
