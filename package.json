@@ -41,7 +41,7 @@
     "storybook": "cd test && npm run storybook",
     "dev": "concurrently 'npm:buildWatch' 'npm:storybook'",
     "ci:buildTest": "cd test && npm run build-storybook",
-    "ci:serveTest": "http-server ./test/storybook-static",
+    "ci:serveTest": "http-server -s ./test/storybook-static",
     "cy:run": "cypress run",
     "ci:cy-run": "start-server-and-test ci:startAngularStorybookBuild http://localhost:8080 cy:run"
   },
