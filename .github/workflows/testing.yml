@@ -15,4 +15,4 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
-          start: ci:startAngularStorybookBuild
+          start: npm run ci:startAngularStorybookBuild
