@@ -10,9 +10,10 @@ jobs:
         uses: actions/checkout@v2
       - name: Install dependencies
         run: npm ci
-      - name: Run server
-        run: npm run ci:startAngularStorybookBuild &
       - name: Run E2E tests
         uses: cypress-io/github-action@v1
         with:
+          build: npm run buildTest
+          start: npm run serveTest
+          wait-on: http://localhost:8080
           install: false

@@ -40,7 +40,8 @@
     "buildWatch": "rollup -c --watch",
     "storybook": "cd test && npm run storybook",
     "dev": "concurrently 'npm:buildWatch' 'npm:storybook'",
-    "ci:startAngularStorybookBuild": "cd test && npm run build-storybook && cd storybook-static && http-server ./",
+    "ci:buildTest": "cd test && npm run build-storybook",
+    "ci:serveTest": "http-server ./test/storybook-static",
     "cy:run": "cypress run",
     "ci:cy-run": "start-server-and-test ci:startAngularStorybookBuild http://localhost:8080 cy:run"
   },
