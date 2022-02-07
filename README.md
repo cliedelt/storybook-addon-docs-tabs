@@ -81,7 +81,7 @@ Unfortunately this is necessary because of the limited Storybook api. Any unique
 Prefix the stories title with `hidden/` to hide it in the sidebar.
 
 ```jsx
-import { Story, Meta, ArgsTable, Source } from "@storybook/addon-docs";
+import { Meta } from "@storybook/addon-docs";
 
 <Meta
   id="simple-button-implementation"
