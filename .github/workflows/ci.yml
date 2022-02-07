@@ -10,6 +10,8 @@ jobs:
         uses: actions/checkout@v2
       - name: Install dependencies
         run: npm ci
+      - name: Install Test dependencies
+        run: npm run installTest
       - name: Run E2E tests
         uses: cypress-io/github-action@v2
         with:

@@ -56,7 +56,7 @@
     "typescript": "^4.5.5"
   },
   "scripts": {
-    "postinstall": "cd test && npm i",
+    "installTest": "cd test && npm i",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rollup -c",
     "buildWatch": "rollup -c --watch",
