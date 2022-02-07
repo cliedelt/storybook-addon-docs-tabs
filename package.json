@@ -12,7 +12,7 @@
   ],
   "storybook": {
     "displayName": "Docs Tabs",
-    "icon": "https://github.com/cliedelt/storybook-addon-docs-tabs/blob/079e4c2a46f1170812940f01797f942b225962ac/logo.png",
+    "https://raw.githubusercontent.com/cliedelt/storybook-addon-docs-tabs/079e4c2a46f1170812940f01797f942b225962ac/logo.png",
     "supportedFrameworks": [
       "react",
       "angular"
