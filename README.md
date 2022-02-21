@@ -17,8 +17,8 @@ _Note: This addon is a little bit hacky. The storybook api does not support some
 ### 1. Install
 
 ```sh
-npm install --save-dev storybook-addon-designs
-# yarn add -D storybook-addon-designs
+npm install --save-dev storybook-addon-docs-tabs
+# yarn add -D storybook-addon-docs-tabs
 ```
 
 ### 2. Add new Container to `.storybook/preview.js`
