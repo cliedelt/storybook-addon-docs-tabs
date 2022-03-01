@@ -1,6 +1,6 @@
 {
   "name": "storybook-addon-docs-tabs",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A Storybook addon that adds tabs to the Docs Addon.",
   "author": "cliedelt",
   "keywords": [

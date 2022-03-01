@@ -28,6 +28,7 @@
   }
   &__tab-panel {
     display: none;
+    margin: 0px -20px;
     &--selected {
       display: block;
     }
@@ -37,5 +38,5 @@
   margin: 2rem 0px;
 }
 .tab-addon-tab-content {
-  margin: -2rem -20px;
+  margin: -2rem 0px;
 }

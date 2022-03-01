@@ -1,4 +1,5 @@
 import React from "react";
+import "./tabframe.scss";
 
 type IFrameInput = {
   url: string;
@@ -16,29 +17,48 @@ export default class TabFrame extends React.Component<IFrameInput> {
     if (this.iframeElement) {
       let docsRootElement =
         this.iframeElement.contentDocument?.getElementById("docs-root");
-      if (docsRootElement)
+      if (docsRootElement) {
         this.iframeElement.height = docsRootElement.offsetHeight + "px";
+        docsRootElement.classList.add("iframe");
+      }
     }
   }
 
   componentDidMount(): void {
     if (this.iframeElement) {
+      if (
+        this.iframeElement.contentDocument &&
+        this.iframeElement.contentDocument.readyState === "complete" &&
+        this.iframeElement.contentWindow &&
+        this.iframeElement.contentWindow.location.toString() !== "about:blank"
+      ) {
+        this.addObserver();
+      }
       this.iframeElement.onload = () => {
-        this.setIFrameHeight();
+        this.addObserver();
       };
       this.iframeElement.onresize = () => {
-        this.setIFrameHeight();
+        this.addObserver();
       };
-      if (!this.observer) {
-        this.observer = new IntersectionObserver(() => {
-          this.setIFrameHeight();
-        });
-        this.observer.observe(this.iframeElement);
-      }
+    }
+  }
+  addObserver() {
+    this.setIFrameHeight();
+    if (
+      !this.observer &&
+      this.iframeElement &&
+      this.iframeElement.contentDocument
+    ) {
+      console.log("SET OBSERVE");
+      this.observer = new IntersectionObserver(() => {
+        console.log("SET HEIGHT");
+        this.setIFrameHeight();
+      });
+      this.observer.observe(this.iframeElement.contentDocument.body);
     }
   }
   componentWillUnmount() {
-    this.observer.disconnect();
+    if (this.observer) this.observer.disconnect();
   }
 
   render() {

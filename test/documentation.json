@@ -60,7 +60,7 @@
         },
         {
             "name": "TestComponent",
-            "id": "component-TestComponent-05ae0fee4a0a4f417b741a62c430e4e8b137b71e0d9697faf9e9699457570e5e09eca7cae6e05c804c00505d7339a05ea376936fb2a006efee25a27b02b61911",
+            "id": "component-TestComponent-a92711110fc6d898766a1e8467a6a0cdfb88e4398217ea36c4e4f062c7ef3d5adbe64949e50a1a8b14ecce822379c6f9325312509415dd2b54eeabae69f2d111",
             "file": "src/app/test.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -73,7 +73,18 @@
             "template": "<button>Hello World!</button>",
             "templateUrl": [],
             "viewProviders": [],
-            "inputsClass": [],
+            "inputsClass": [
+                {
+                    "name": "text",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nThis is a input\n",
+                    "description": "<p>This is a input</p>\n",
+                    "line": 11,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
             "outputsClass": [],
             "propertiesClass": [],
             "methodsClass": [],
@@ -84,7 +95,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-component-overview',\r\n  template: '<button>Hello World!</button>',\r\n})\r\nexport class TestComponent {}\r\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-component-overview',\r\n  template: '<button>Hello World!</button>',\r\n})\r\nexport class TestComponent {\r\n  /**\r\n   * This is a input\r\n   */\r\n  @Input('text') text!: string;\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": ""
@@ -283,7 +294,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 0,
+        "count": 6,
         "status": "low",
         "files": [
             {
@@ -320,9 +331,9 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "TestComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
+                "coveragePercent": 50,
+                "coverageCount": "1/2",
+                "status": "medium"
             },
             {
                 "filePath": "src/environments/environment.prod.ts",

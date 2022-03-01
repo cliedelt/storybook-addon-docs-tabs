@@ -10,7 +10,20 @@ describe("tab docspage", () => {
       .find(".storybook_header")
       .should("not.be.empty")
       .then(() => {
-        cy.get("html").toMatchImageSnapshot({});
+        cy.get("html")
+          .invoke("css", "height", "3000px")
+          .invoke("css", "overflow", "initial");
+        cy.get("body")
+          .invoke("css", "height", "3000px")
+          .invoke("css", "overflow", "initial");
+        cy.get("#root").invoke("css", "height", "100%");
+        cy.get("#root > div")
+          .invoke("css", "position", "relative")
+          .invoke("css", "height", "100%");
+        cy.wait(10);
+        cy.get("html").toMatchImageSnapshot({
+          capture: "fullPage",
+        });
       });
   });
 });
