@@ -19,7 +19,9 @@ jobs:
           start: npm run ci:serveTest
           wait-on: http://localhost:8080
           install: false
-      - uses: actions/upload-artifact@v2
+      - name: Upload Screenhots
+        uses: actions/upload-artifact@v2
+        if: always()
         with:
           name: Screenshots
           path: cypress/integration/visual-testing/__image_snapshots__/
