@@ -2,7 +2,9 @@
 
 describe("tab docspage", () => {
   beforeEach(() => {
-    cy.visit("http://localhost:8080/?path=/story/example-tab-example--page");
+    cy.visit(
+      "http://localhost:8080/?path=/story/example-tab-example--page"
+    ).viewport(1920, 3000);
   });
 
   it("displays two tabs", () => {
@@ -20,7 +22,7 @@ describe("tab docspage", () => {
         cy.get("#root > div")
           .invoke("css", "position", "relative")
           .invoke("css", "height", "100%");
-        cy.wait(10);
+        cy.wait(100);
         cy.get("html").toMatchImageSnapshot({
           capture: "fullPage",
         });
