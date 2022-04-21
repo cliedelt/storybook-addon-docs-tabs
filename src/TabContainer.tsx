@@ -64,7 +64,7 @@ export default class TabContainer extends React.Component<TabContainerInput> {
   renderTabs() {
     return (
       <Tabs forceRenderTabPanel={false}>
-        <TabList>
+        <TabList id="tabList">
           {this.tabs.map((tab, i) => {
             return <Tab key={i.toString()}>{tab.label}</Tab>;
           })}

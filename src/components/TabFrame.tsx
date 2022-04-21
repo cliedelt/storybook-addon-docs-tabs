@@ -49,9 +49,7 @@ export default class TabFrame extends React.Component<IFrameInput> {
       this.iframeElement &&
       this.iframeElement.contentDocument
     ) {
-      console.log("SET OBSERVE");
       this.observer = new IntersectionObserver(() => {
-        console.log("SET HEIGHT");
         this.setIFrameHeight();
       });
       this.observer.observe(this.iframeElement.contentDocument.body);
