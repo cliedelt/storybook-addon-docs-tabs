@@ -7,6 +7,7 @@ import TabFrame from "./components/TabFrame";
 import kebabCase from "lodash/kebabCase";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "./tabContainer.scss";
+import { isNull } from "lodash";
 
 type TabContainerInput = {
   context: StoryContext;
@@ -54,6 +55,7 @@ export default class TabContainer extends React.Component<TabContainerInput> {
       <div>
         <Header
           title={this.props.context.title}
+          description={this.props.context.description ? this.props.context.description : null}
           additionalElement={this.props.additionalHeaderElement}
         />
         {this.tabs.length > 0 ? this.renderTabs() : this.renderNormalDocPage()}
